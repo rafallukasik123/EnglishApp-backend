@@ -6,10 +6,10 @@ class GetPhrase extends Main_router{
     constructor() {
         super();
     }
-    getPhrases(){
-        return   router.get('/getPhrase',async(req,res) => {
+     getPhrases(){
+        return router.get('/getPhrase',async(req,res) => {
             try {
-                let test = 'test'
+                let test =  await this.runQuery()
                 res.send({ test})
             } catch (error) {
                 res.status(400).send("something goes wrong")

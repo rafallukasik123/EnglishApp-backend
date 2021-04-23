@@ -11,9 +11,13 @@ constructor() {
     }
 
     async runQuery(){
-        await this.db.test();
+       let res = await this.db.test();
+       return res;
     }
-
+    async insertOne(data){
+        let res = await this.db.insertOne(data);
+        return res;
+    }
 }
 
 module.exports = Main_router
