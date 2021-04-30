@@ -22,6 +22,10 @@ constructor() {
     let res = await this.db.findOne(query);
     return res;
     }
+    async find(query){
+        let res = await this.db.find(query);
+        return res;
+    }
 }
 
 module.exports = Main_router

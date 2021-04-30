@@ -34,6 +34,15 @@ class Database {
         }
     }
 
+    async find(query){
+        try {
+            let resault = await this.collection.find(query);
+            return resault;
+        }catch (e) {
+            console.error(e)
+        }
+    }
+
 
 
     async test(){
