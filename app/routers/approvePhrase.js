@@ -6,13 +6,13 @@ class PassPhrase extends Main_router{
     constructor() {
         super();
     }
-    passPhrase(){
-        return router.post('/passPhrase',async(req,res) => {
+    approvePhrase(){
+        return router.post('/approvePhrase',async(req,res) => {
             try {
                 const id =  req.query.id;
                 let update = {
                     "$set": {
-                           date : new Date()
+                        isApprove : true
 
                     }
                 }
