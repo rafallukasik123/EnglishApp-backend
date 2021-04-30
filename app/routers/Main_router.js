@@ -18,6 +18,10 @@ constructor() {
         let res = await this.db.insertOne(data);
         return res;
     }
+    async fineOne(query){
+    let res = await this.db.findOne(query);
+    return res;
+    }
 }
 
 module.exports = Main_router

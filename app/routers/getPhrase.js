@@ -12,7 +12,7 @@ class GetPhrase extends Main_router{
                 let test =  await this.runQuery()
                 res.send({ test})
             } catch (error) {
-                res.status(400).send("something goes wrong")
+                res.status(400).send({error : error})
             }
         })
     }

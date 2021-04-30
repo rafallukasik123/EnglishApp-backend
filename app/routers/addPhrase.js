@@ -19,16 +19,25 @@ class AddPhrase extends Main_router{
                 }
                 const date = new Date();
                 const isApprove = false;
+                let objectToCheckCollectionContainPhrase = {
+                    english : english
+                }
+                let document = await this.fineOne(objectToCheckCollectionContainPhrase);
+                if (document != null){
+                    throw (`Slowo ${english} jest już w bazie`)
+                }
                 let data = {
                     english : english,
                     polish : polish,
                     date : date,
                     isApprove : isApprove
                 }
-                let test =  await this.insertOne(data);
+
+                console.log(test)
+              //  let test =  await this.insertOne(data);
                 res.send({data : 'ok'})
             } catch (error) {
-                res.status(400).send("something goes wrong")
+                res.status(400).send({error : error})
             }
         })
     }
@@ -38,6 +47,10 @@ class AddPhrase extends Main_router{
         }else{
             return  false;
         }
+    }
+
+    async isContainPhrase(phrase){
+
     }
 
 

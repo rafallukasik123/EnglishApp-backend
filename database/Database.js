@@ -17,13 +17,25 @@ class Database {
     }
     async insertOne(data){
     try {
-        let resault = this.collection.insertOne(data);
-        console.log(resault);
+        let resault = await this.collection.insertOne(data);
+       // console.log(resault);
         return resault;
     }catch (e) {
         console.error(e)
     }
     }
+    async findOne(query){
+        try {
+            let resault = await this.collection.findOne(query);
+           // console.log(resault);
+            return resault;
+        }catch (e) {
+            console.error(e)
+        }
+    }
+
+
+
     async test(){
         const query = { tests: 'test123' };
         const movie = await this.collection.findOne(query);
