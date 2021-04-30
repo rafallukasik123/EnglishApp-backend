@@ -1,6 +1,6 @@
 const {MongoClient} = require('mongodb');
 const client = new MongoClient(process.env.MONGODB_URL);
-
+const ObjectId = require('mongodb').ObjectId
 
 class Database {
     constructor() {
@@ -43,6 +43,18 @@ class Database {
         }
     }
 
+    async updateOneById(id,update){
+        try {
+            let _id = new ObjectId(id)
+            let query = {
+                "_id" : _id
+            }
+            let resault = await this.collection.updateOne(query,update);
+            return resault;
+        }catch (e) {
+            console.error(e)
+        }
+    }
 
 
     async test(){

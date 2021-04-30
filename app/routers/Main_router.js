@@ -26,6 +26,10 @@ constructor() {
         let res = await this.db.find(query);
         return res;
     }
+    async updateOneById(id,update){
+    let res = await this.db.updateOneById(id,update);
+    return res;
+    }
 }
 
 module.exports = Main_router
