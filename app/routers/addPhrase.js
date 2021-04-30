@@ -24,7 +24,7 @@ class AddPhrase extends Main_router{
                 }
                 let document = await this.fineOne(objectToCheckCollectionContainPhrase);
                 if (document != null){
-                    throw (`Slowo ${english} jest już w bazie`)
+                    throw (`Slowo "${english}" jest już w bazie`)
                 }
                 let data = {
                     english : english,
@@ -32,10 +32,8 @@ class AddPhrase extends Main_router{
                     date : date,
                     isApprove : isApprove
                 }
-
-                console.log(test)
-              //  let test =  await this.insertOne(data);
-                res.send({data : 'ok'})
+                let addedDocument =  await this.insertOne(data);
+                res.send({data : `Slowo "${english}" zostało dodane`})
             } catch (error) {
                 res.status(400).send({error : error})
             }
