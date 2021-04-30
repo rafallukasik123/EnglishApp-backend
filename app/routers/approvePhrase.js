@@ -2,7 +2,7 @@ const Main_router = require('./Main_router')
 const express = require('express')
 const router = express.Router();
 
-class PassPhrase extends Main_router{
+class ApprovePhrase extends Main_router{
     constructor() {
         super();
     }
@@ -27,4 +27,4 @@ class PassPhrase extends Main_router{
 
 
 }
-module.exports = PassPhrase
+module.exports = ApprovePhrase
