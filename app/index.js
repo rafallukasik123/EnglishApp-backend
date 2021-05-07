@@ -4,13 +4,14 @@ dotenv.config();
 const express = require('express');
 
 const app = express();
-
+var cors = require('cors')
 const getPhrase = require('./routers/getPhrase');
 const addPhrase = require("./routers/addPhrase");
 const passPhrase = require("./routers/passPhrase");
 const approvePhrase = require("./routers/approvePhrase");
 const getAllPhrases = require("./routers/getAllPhrases");
 
+app.use(cors())
 app.use(express.json())
 app.use(new getPhrase().getPhrases());
 app.use(new addPhrase().addPhrase());

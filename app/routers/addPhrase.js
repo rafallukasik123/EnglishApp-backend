@@ -9,11 +9,11 @@ class AddPhrase extends Main_router{
     addPhrase(){
         return router.post('/addPhrase',async(req,res) => {
             try {
-                const english =  req.query.english;
+                const english =  req.body.english;
                 if (this.checkIsEmptyOrNull(english)){
                     throw("Brak tłumaczenia")
                 }
-                const polish =  req.query.polish;
+                const polish =  req.body.polish;
                 if (this.checkIsEmptyOrNull(polish)){
                     throw("Brak tłumaczenia")
                 }
