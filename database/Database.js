@@ -55,7 +55,18 @@ class Database {
             console.error(e)
         }
     }
-
+    async deleteOneById(id){
+        try {
+            let _id = new ObjectId(id)
+            let query = {
+                "_id" : _id
+            }
+            let resault = await this.collection.deleteOne(query);
+            return resault;
+        }catch (e) {
+            console.error(e)
+        }
+    }
 
     async test(){
         const query = { tests: 'test123' };

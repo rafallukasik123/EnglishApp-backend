@@ -9,7 +9,7 @@ class ApprovePhrase extends Main_router{
     approvePhrase(){
         return router.post('/approvePhrase',async(req,res) => {
             try {
-                const id =  req.query.id;
+                const id =  req.body.id;
                 let update = {
                     "$set": {
                         isApprove : true
