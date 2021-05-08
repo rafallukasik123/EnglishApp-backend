@@ -10,9 +10,6 @@ class RemovePhrase extends Main_router{
         return router.post('/removePhrase',async(req,res) => {
             try {
                 const id =  req.body.id;
-                let query = {
-                    id : id
-                }
                 let response = await this.deleteOneById(id);
                 res.send({data : "ok"})
             } catch (error) {

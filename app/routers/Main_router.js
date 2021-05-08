@@ -34,6 +34,10 @@ constructor() {
         let res = await this.db.deleteOneById(id);
         return res;
     }
+    async findOneById(id){
+        let res = await this.db.findOneById(id);
+        return res;
+    }
 }
 
 module.exports = Main_router
